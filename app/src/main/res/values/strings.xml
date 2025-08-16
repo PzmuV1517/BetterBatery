@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BetterBattery</string>
+    <string name="toy_name_better_battery">Better Battery</string>
+    <string name="toy_summary_better_battery">Interactive battery level display with liquid simulation</string>
+</resources>
