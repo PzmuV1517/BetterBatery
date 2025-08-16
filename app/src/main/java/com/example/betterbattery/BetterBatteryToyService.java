@@ -58,6 +58,13 @@ public class BetterBatteryToyService extends Service implements SensorEventListe
     private float gravityX = 0f; // Gravity in X direction (left/right)
     private float gravityY = 9.8f; // Gravity in Y direction (up/down)
 
+    // Animation variables for startup effect
+    private boolean isAnimating = false;
+    private long animationStartTime = 0;
+    private static final long ANIMATION_DURATION = 600; // 0.6 seconds (faster animation)
+    private float animatedWaterLevel = 0f;
+    private int animatedBatteryLevel = 0;
+
     @Override
     public IBinder onBind(Intent intent) {
         init();
@@ -79,6 +86,8 @@ public class BetterBatteryToyService extends Service implements SensorEventListe
                 mGM.register(Glyph.DEVICE_23112); // Phone 3 device ID
                 startBatteryAndSensorMonitoring();
                 startUpdateLoop();
+                // Start animation when the glyph toy is first opened
+                startAnimation();
             }
 
             @Override
@@ -131,6 +140,11 @@ public class BetterBatteryToyService extends Service implements SensorEventListe
 
     private void updateDisplay() {
         try {
+            // Update animation if running
+            if (isAnimating) {
+                updateAnimation();
+            }
+
             // Create the three layers using GlyphMatrixObject.Builder
             GlyphMatrixObject.Builder liquidBuilder = new GlyphMatrixObject.Builder();
             GlyphMatrixObject liquidLayer = liquidBuilder
@@ -146,9 +160,12 @@ public class BetterBatteryToyService extends Service implements SensorEventListe
                     .setBrightness(255)
                     .build();
 
+            // Use animated battery level during animation, otherwise use current battery level
+            int displayLevel = isAnimating ? animatedBatteryLevel : currentBatteryLevel;
+
             GlyphMatrixObject.Builder textBuilder = new GlyphMatrixObject.Builder();
             GlyphMatrixObject textLayer = textBuilder
-                    .setText(String.format("%02d%%", currentBatteryLevel))
+                    .setText(String.format("%02d%%", displayLevel))
                     .setPosition(4, 9) // Centered position for 25x25 matrix
                     .setBrightness(255)
                     .build();
@@ -358,8 +375,8 @@ public class BetterBatteryToyService extends Service implements SensorEventListe
                     Bundle bundle = msg.getData();
                     String event = bundle.getString(GlyphToy.MSG_GLYPH_TOY_DATA);
                     if (GlyphToy.EVENT_CHANGE.equals(event)) {
-                        // Long press - could toggle animation speed or refresh
-                        updateDisplay();
+                        // Long press detected - restart animation
+                        startAnimation();
                     } else if (GlyphToy.EVENT_AOD.equals(event)) {
                         // Always-On Display update (every minute)
                         updateDisplay();
@@ -397,5 +414,41 @@ public class BetterBatteryToyService extends Service implements SensorEventListe
         }
 
         mCallback = null;
+    }
+
+    private void updateAnimation() {
+        if (!isAnimating) return;
+
+        long currentTime = System.currentTimeMillis();
+        long elapsed = currentTime - animationStartTime;
+
+        // Calculate linear progress (0.0 to 1.0)
+        float progress = Math.min(1.0f, (float) elapsed / ANIMATION_DURATION);
+
+        // Linear interpolation for battery level
+        animatedBatteryLevel = (int) (progress * currentBatteryLevel);
+
+        // Linear interpolation for water level
+        animatedWaterLevel = progress * (currentBatteryLevel / 100f);
+        targetWaterLevel = animatedWaterLevel;
+
+        // Stop animation when complete
+        if (progress >= 1.0f) {
+            isAnimating = false;
+            animatedBatteryLevel = currentBatteryLevel;
+            targetWaterLevel = currentBatteryLevel / 100f;
+        }
+    }
+
+    private void startAnimation() {
+        isAnimating = true;
+        animationStartTime = System.currentTimeMillis();
+        animatedBatteryLevel = 0;
+        animatedWaterLevel = 0f;
+
+        // Reset liquid heights to start empty
+        for (int i = 0; i < MATRIX_SIZE; i++) {
+            liquidHeights[i] = MATRIX_SIZE; // Start with empty liquid (water at bottom = high Y value)
+        }
     }
 }
