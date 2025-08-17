@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.example.betterbattery">
 
     <!-- Required permission for Glyph Matrix -->
     <uses-permission android:name="com.nothing.ketchum.permission.ENABLE"/>
@@ -33,7 +33,7 @@
             <!-- Required: Preview image -->
             <meta-data
                 android:name="com.nothing.glyph.toy.image"
-                android:resource="@drawable/img_better_battery_preview"/>
+                android:resource="@drawable/glyph_matrix"/>
 
             <!-- Optional: Description -->
             <meta-data
