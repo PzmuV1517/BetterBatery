@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.11.1" type="incidents">
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/betterbattery/BetterBatteryToyService.java"
+            line="147"
+            column="30"
+            startOffset="5219"
+            endLine="147"
+            endColumn="74"
+            endOffset="5263"/>
+    </incident>
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.11.1 is available: 8.12.0">
+        <fix-replace
+            description="Replace with 8.12.0"
+            family="Update versions"
+            oldString="8.11.1"
+            replacement="8.12.0"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/BetterBattery/gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="17"
+            endLine="2"
+            endColumn="15"
+            endOffset="25"/>
+        <map>
+            <entry
+                name="coordinate"
+                string="com.android.application"/>
+            <entry
+                name="revision"
+                string="8.12.0"/>
+        </map>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.2.1 is available: 1.3.0">
+        <fix-replace
+            description="Change to 1.3.0"
+            family="Update versions"
+            oldString="1.2.1"
+            replacement="1.3.0"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/BetterBattery/gradle/libs.versions.toml"
+            line="4"
+            column="16"
+            startOffset="58"
+            endLine="4"
+            endColumn="23"
+            endOffset="65"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.6.1 is available: 3.7.0">
+        <fix-replace
+            description="Change to 3.7.0"
+            family="Update versions"
+            oldString="3.6.1"
+            replacement="3.7.0"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/BetterBattery/gradle/libs.versions.toml"
+            line="5"
+            column="16"
+            startOffset="81"
+            endLine="5"
+            endColumn="23"
+            endOffset="88"/>
+    </incident>
+
+    <incident
+        id="ExportedService"
+        severity="warning"
+        message="Exported service does not require permission">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set permission"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="permission"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set exported=&quot;false&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="exported"
+                value="false"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="20"
+            column="10"
+            startOffset="744"
+            endLine="20"
+            endColumn="17"
+            endOffset="751"/>
+    </incident>
+
+</incidents>

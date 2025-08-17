@@ -1,0 +1,176 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.betterbattery"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="35"
+9        android:targetSdkVersion="36" />
+10
+11    <!-- Required permission for Glyph Matrix -->
+12    <uses-permission android:name="com.nothing.ketchum.permission.ENABLE" />
+12-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:6:5-76
+12-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:6:22-74
+13
+14    <!-- Required permission for battery level -->
+15    <uses-permission android:name="android.permission.BATTERY_STATS" />
+15-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:9:5-71
+15-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:9:22-69
+16
+17    <permission
+17-->[androidx.core:core:1.13.0] C:\Users\child\.gradle\caches\8.13\transforms\adbd1bf8c0dde738d4ae689d2cff7ec7\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+18        android:name="com.example.betterbattery.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+18-->[androidx.core:core:1.13.0] C:\Users\child\.gradle\caches\8.13\transforms\adbd1bf8c0dde738d4ae689d2cff7ec7\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+19        android:protectionLevel="signature" />
+19-->[androidx.core:core:1.13.0] C:\Users\child\.gradle\caches\8.13\transforms\adbd1bf8c0dde738d4ae689d2cff7ec7\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+20
+21    <uses-permission android:name="com.example.betterbattery.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+21-->[androidx.core:core:1.13.0] C:\Users\child\.gradle\caches\8.13\transforms\adbd1bf8c0dde738d4ae689d2cff7ec7\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.13.0] C:\Users\child\.gradle\caches\8.13\transforms\adbd1bf8c0dde738d4ae689d2cff7ec7\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+22
+23    <application
+23-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:11:5-54:19
+24        android:allowBackup="true"
+24-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:12:9-35
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.13.0] C:\Users\child\.gradle\caches\8.13\transforms\adbd1bf8c0dde738d4ae689d2cff7ec7\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+26        android:dataExtractionRules="@xml/data_extraction_rules"
+26-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:13:9-65
+27        android:extractNativeLibs="false"
+28        android:fullBackupContent="@xml/backup_rules"
+28-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:14:9-54
+29        android:icon="@mipmap/ic_launcher"
+29-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:15:9-43
+30        android:label="@string/app_name"
+30-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:16:9-41
+31        android:roundIcon="@mipmap/ic_launcher_round"
+31-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:17:9-54
+32        android:supportsRtl="true"
+32-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:18:9-35
+33        android:theme="@style/Theme.BetterBattery" >
+33-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:19:9-51
+34
+35        <!-- BetterBattery Glyph Toy Service -->
+36        <service
+36-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:22:9-52:19
+37            android:name="com.example.betterbattery.BetterBatteryToyService"
+37-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:22:18-57
+38            android:exported="true" >
+38-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:23:13-36
+39            <intent-filter>
+39-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:24:13-26:29
+40                <action android:name="com.nothing.glyph.TOY" />
+40-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:25:17-63
+40-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:25:25-61
+41            </intent-filter>
+42
+43            <!-- Required: Toy name -->
+44            <meta-data
+44-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:29:13-31:69
+45                android:name="com.nothing.glyph.toy.name"
+45-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:30:17-58
+46                android:resource="@string/toy_name_better_battery" />
+46-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:31:17-67
+47
+48            <!-- Required: Preview image -->
+49            <meta-data
+49-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:34:13-36:60
+50                android:name="com.nothing.glyph.toy.image"
+50-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:35:17-59
+51                android:resource="@drawable/glyph_matrix" />
+51-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:36:17-58
+52
+53            <!-- Optional: Description -->
+54            <meta-data
+54-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:39:13-41:72
+55                android:name="com.nothing.glyph.toy.summary"
+55-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:40:17-61
+56                android:resource="@string/toy_summary_better_battery" />
+56-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:41:17-70
+57
+58            <!-- Optional: Enable long press -->
+59            <meta-data
+59-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:44:13-46:36
+60                android:name="com.nothing.glyph.toy.longpress"
+60-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:45:17-63
+61                android:value="1" />
+61-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:46:17-34
+62
+63            <!-- Optional: AOD support -->
+64            <meta-data
+64-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:49:13-51:36
+65                android:name="com.nothing.glyph.toy.aod_support"
+65-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:50:17-65
+66                android:value="1" />
+66-->C:\Users\child\AndroidStudioProjects\BetterBattery\app\src\main\AndroidManifest.xml:51:17-34
+67        </service>
+68
+69        <provider
+69-->[androidx.emoji2:emoji2:1.3.0] C:\Users\child\.gradle\caches\8.13\transforms\60ad9587181d9ac47b17af7cceba718d\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+70            android:name="androidx.startup.InitializationProvider"
+70-->[androidx.emoji2:emoji2:1.3.0] C:\Users\child\.gradle\caches\8.13\transforms\60ad9587181d9ac47b17af7cceba718d\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+71            android:authorities="com.example.betterbattery.androidx-startup"
+71-->[androidx.emoji2:emoji2:1.3.0] C:\Users\child\.gradle\caches\8.13\transforms\60ad9587181d9ac47b17af7cceba718d\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+72            android:exported="false" >
+72-->[androidx.emoji2:emoji2:1.3.0] C:\Users\child\.gradle\caches\8.13\transforms\60ad9587181d9ac47b17af7cceba718d\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+73            <meta-data
+73-->[androidx.emoji2:emoji2:1.3.0] C:\Users\child\.gradle\caches\8.13\transforms\60ad9587181d9ac47b17af7cceba718d\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+74                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+74-->[androidx.emoji2:emoji2:1.3.0] C:\Users\child\.gradle\caches\8.13\transforms\60ad9587181d9ac47b17af7cceba718d\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+75                android:value="androidx.startup" />
+75-->[androidx.emoji2:emoji2:1.3.0] C:\Users\child\.gradle\caches\8.13\transforms\60ad9587181d9ac47b17af7cceba718d\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+76            <meta-data
+76-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\child\.gradle\caches\8.13\transforms\bd49396ca2dafe9ce896b76ae0dc7821\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+77                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+77-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\child\.gradle\caches\8.13\transforms\bd49396ca2dafe9ce896b76ae0dc7821\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+78                android:value="androidx.startup" />
+78-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\child\.gradle\caches\8.13\transforms\bd49396ca2dafe9ce896b76ae0dc7821\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+79            <meta-data
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+80                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+81                android:value="androidx.startup" />
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+82        </provider>
+83
+84        <receiver
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+85            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+86            android:directBootAware="false"
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+87            android:enabled="true"
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+88            android:exported="true"
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+89            android:permission="android.permission.DUMP" >
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+90            <intent-filter>
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+91                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+92            </intent-filter>
+93            <intent-filter>
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+94                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+95            </intent-filter>
+96            <intent-filter>
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+97                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+98            </intent-filter>
+99            <intent-filter>
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+100                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\child\.gradle\caches\8.13\transforms\46c413aa473bd610eb578a8c7d39d8f2\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+101            </intent-filter>
+102        </receiver>
+103    </application>
+104
+105</manifest>
